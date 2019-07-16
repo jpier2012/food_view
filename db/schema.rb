@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_16_012130) do
+ActiveRecord::Schema.define(version: 2019_07_16_022212) do
+
+  create_table "dishes", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "price"
+    t.integer "taste"
+    t.integer "overall_value"
+    t.integer "dining_experience"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "cuisine"
+    t.string "dress_code"
+    t.boolean "outdoor_seating?"
+    t.boolean "child_friendly?"
+    t.boolean "open_bar?"
+    t.boolean "byob?"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
