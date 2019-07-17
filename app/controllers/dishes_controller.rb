@@ -26,7 +26,9 @@ class DishesController < ApplicationController
         redirect_to dish_path(dish)
     end
 
-    def delete
+    def destroy
+        Dish.find_by_id(params[:id]).destroy
+        redirect_to dishes_path
     end
 
     private
