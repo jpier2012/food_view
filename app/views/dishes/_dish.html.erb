@@ -1,0 +1,25 @@
+<%= form_for @dish do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %><br>
+
+  <%= f.label :price, "Price: $" %>
+  <%= f.number_field :price %><br><br>
+
+  Rate your meal! (1-5 scale, 5 being best): <br>
+
+  <%= f.label :taste %>
+  <%= f.number_field :taste %><br>
+
+  <%= f.label :dining_experience %>
+  <%= f.number_field :dining_experience %><br>
+  
+  <%= f.label :overall_value %>
+  <%= f.number_field :overall_value %><br><br>
+
+  <%= f.collection_select(:restaurant_id, Restaurant.all, :id, :name, {prompt: "Please Select a Restaurant"}) %><br><br>
+
+  <%= f.submit %><br>
+<% end %>
