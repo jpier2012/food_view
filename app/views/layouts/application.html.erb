@@ -12,7 +12,7 @@
   <body>
     <p class="notice"><%= flash[:notice] if flash[:notice] %></p>
     <p class="alert"><%= flash[:alert] if flash[:alert] %></p>
-    <%= link_to "Log Out", logout_path, method: :delete if user_signed_in? %>
     <%= yield %>
+    <%= render "nav" %>
   </body>
 </html>
