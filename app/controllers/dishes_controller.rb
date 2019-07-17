@@ -1,5 +1,6 @@
 class DishesController < ApplicationController
     def index
+        @dishes = current_user.dishes
     end
 
     def new
