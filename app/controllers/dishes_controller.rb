@@ -1,4 +1,7 @@
 class DishesController < ApplicationController
+    include DishesHelper
+    before_action :set_dish, only: [:show, :edit, :update, :destroy]
+
     def index
         @dishes = current_user.dishes
     end
@@ -13,21 +16,18 @@ class DishesController < ApplicationController
     end
 
     def show
-        @dish = Dish.find_by_id(params[:id])
     end
 
     def edit
-        @dish = Dish.find_by_id(params[:id])
     end
 
     def update
-        dish = Dish.find_by_id(params[:id])
-        dish.update(dish_params)
-        redirect_to dish_path(dish)
+        @dish.update(dish_params)
+        redirect_to dish_path(@dish)
     end
 
     def destroy
-        Dish.find_by_id(params[:id]).destroy
+        @dish.destroy
         redirect_to dishes_path
     end
 
