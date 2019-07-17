@@ -17,9 +17,13 @@ class DishesController < ApplicationController
     end
 
     def edit
+        @dish = Dish.find_by_id(params[:id])
     end
 
     def update
+        dish = Dish.find_by_id(params[:id])
+        dish.update(dish_params)
+        redirect_to dish_path(dish)
     end
 
     def delete
