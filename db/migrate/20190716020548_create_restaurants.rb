@@ -5,10 +5,10 @@ class CreateRestaurants < ActiveRecord::Migration[5.2]
       t.string :address
       t.string :cuisine
       t.string :dress_code
-      t.boolean :outdoor_seating?
-      t.boolean :child_friendly?
-      t.boolean :open_bar?
-      t.boolean :byob?
+      t.boolean :outdoor_seating, null: false
+      t.boolean :child_friendly, null: false
+      t.boolean :open_bar, null: false
+      t.boolean :byob, null: false
 
       t.timestamps
     end
