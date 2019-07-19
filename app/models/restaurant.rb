@@ -6,4 +6,8 @@ class Restaurant < ApplicationRecord
     scope :thai, -> { where("lower(cuisine) = ?", "thai")}
     scope :indian, -> { where("lower(cuisine) = ?", "indian")}
     scope :chinese, -> { where("lower(cuisine) = ?", "chinese")}
+
+    def self.cuisines
+        self.pluck(:cuisine).uniq
+    end
 end
