@@ -8,7 +8,7 @@ class RestaurantsController < ApplicationController
         if session[:filters]
             session[:filters].each do |attr, value|
                 value == "false" ? filter = "no_#{attr}" : filter = attr
-                filter = "all" if value == "all"
+                filter = value.downcase.strip if attr == "cuisine"
                 @restaurants = @restaurants.send(filter)
             end
         end
