@@ -5,8 +5,8 @@ class RestaurantsController < ApplicationController
     # this method will call the equivalent scope methods on the Restaurant class to chain the query criteria
     def index
         @restaurants ||= Restaurant.all
-        if session[:restaurant_filters]
-            session[:restaurant_filters].each do |attr, value|
+        if session[:filters]
+            session[:filters].each do |attr, value|
                 value == "false" ? filter = "no_#{attr}" : filter = attr
                 filter = "all" if value == "all"
                 @restaurants = @restaurants.send(filter)

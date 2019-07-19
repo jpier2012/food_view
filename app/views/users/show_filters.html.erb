@@ -4,13 +4,23 @@
     
     BYOB? <br>
     <%= label :byob, "Yes" %>
-    <%= radio_button(:user, :byob, :true) %><br> 
+    <%= radio_button(:filters, :byob, :true) %><br> 
 
     <%= label :byob, "No" %>
-    <%= radio_button(:user, :byob, :false) %><br>
+    <%= radio_button(:filters, :byob, :false) %><br>
 
     <%= label :byob, "Don't Care" %>
-    <%= radio_button(:user, :byob, :nil) %><br><br>
+    <%= radio_button(:filters, :byob, :nil) %><br><br>
+
+    Child Friendly? <br>
+    <%= label :child_friendly, "Yes" %>
+    <%= radio_button(:filters, :child_friendly, :true) %><br> 
+
+    <%= label :child_friendly, "No" %>
+    <%= radio_button(:filters, :child_friendly, :false) %><br>
+
+    <%= label :child_friendly, "Don't Care" %>
+    <%= radio_button(:filters, :child_friendly, :nil) %><br><br>
 
     <%= submit_tag "Submit" %>
 <% end %>
