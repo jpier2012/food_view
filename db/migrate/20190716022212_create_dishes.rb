@@ -4,9 +4,9 @@ class CreateDishes < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :description
       t.integer :price
-      t.integer :taste
-      t.integer :overall_value
-      t.integer :dining_experience
+      t.integer :taste, default: 3
+      t.integer :overall_value, default: 3
+      t.integer :dining_experience, default: 3
 
       t.timestamps
     end
