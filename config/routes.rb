@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get "/filters", to: "users#show_filters", as: "show_filters"
   post "/filters", to: "users#edit_filters", as: "edit_filters"
+  delete "/filters", to: "users#clear_filters", as: "clear_filters"
 
   resources :dishes
   resources :restaurants
