@@ -3,7 +3,7 @@ class DishesController < ApplicationController
     before_action :set_dish, only: [:show, :edit, :update, :destroy]
 
     def index
-        @dishes = current_user.dishes
+        @dishes = Dish.all
     end
 
     def new
@@ -12,7 +12,6 @@ class DishesController < ApplicationController
 
     def create
         dish = current_user.dishes.create(dish_params)
-        binding.pry
         redirect_to dish_path(dish)
     end
 

@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 2019_07_16_023112) do
     t.string "address"
     t.string "cuisine"
     t.string "dress_code"
-    t.boolean "outdoor_seating", null: false
-    t.boolean "child_friendly", null: false
-    t.boolean "open_bar", null: false
-    t.boolean "byob", null: false
+    t.boolean "outdoor_seating", default: false
+    t.boolean "child_friendly", default: false
+    t.boolean "open_bar", default: false
+    t.boolean "byob", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

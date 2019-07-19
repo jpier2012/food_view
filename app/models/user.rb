@@ -16,4 +16,7 @@ class User < ApplicationRecord
 
   has_many :dishes
   has_many :restaurants, through: :dishes
+
+  def filtered_restaurants
+  end
 end
