@@ -29,5 +29,25 @@
     <%= label :child_friendly, "Don't Care" %>
     <%= radio_button(:filters, :child_friendly, :nil) %><br><br>
 
+    Outdoor Seating? <br>
+    <%= label :outdoor_seating, "Yes" %>
+    <%= radio_button(:filters, :outdoor_seating, :true) %><br> 
+
+    <%= label :outdoor_seating, "No" %>
+    <%= radio_button(:filters, :outdoor_seating, :false) %><br>
+
+    <%= label :outdoor_seating, "Don't Care" %>
+    <%= radio_button(:filters, :outdoor_seating, :nil) %><br><br>
+
+    Open Bar? <br>
+    <%= label :open_bar, "Yes" %>
+    <%= radio_button(:filters, :open_bar, :true) %><br> 
+
+    <%= label :open_bar, "No" %>
+    <%= radio_button(:filters, :open_bar, :false) %><br>
+
+    <%= label :open_bar, "Don't Care" %>
+    <%= radio_button(:filters, :open_bar, :nil) %><br><br>
+
     <%= submit_tag "Submit" %>
 <% end %>
