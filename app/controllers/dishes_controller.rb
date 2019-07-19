@@ -12,6 +12,7 @@ class DishesController < ApplicationController
 
     def create
         dish = current_user.dishes.create(dish_params)
+        binding.pry
         redirect_to dish_path(dish)
     end
 
@@ -34,6 +35,26 @@ class DishesController < ApplicationController
     private
 
         def dish_params
-            params.require(:dish).permit(:name, :description, :price, :taste, :overall_value, :dining_experience, :restaurant_id)
+            params.require(:dish).permit(
+                :name, 
+                :description, 
+                :price, 
+                :taste, 
+                :overall_value, 
+                :dining_experience, 
+                :restaurant_id, 
+                restaurant_attributes: [
+                    :name,
+                    :description,
+                    :cuisine,
+                    :dress_code,
+                    :outdoor_seating,
+                    :child_friendly,
+                    :open_bar,
+                    :byob
+                ]
+                
+                
+                )
         end
 end

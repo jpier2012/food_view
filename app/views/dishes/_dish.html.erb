@@ -1,25 +1,53 @@
-<%= form_for @dish do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
+<%= form_for @dish do |d| %>
+  <%= d.label :name %>
+  <%= d.text_field :name %><br>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %><br>
+  <%= d.label :description %>
+  <%= d.text_field :description %><br>
 
-  <%= f.label :price, "Price: $" %>
-  <%= f.number_field :price %><br><br>
+  <%= d.label :price, "Price: $" %>
+  <%= d.number_field :price %><br><br>
 
   Rate your meal! (1-5 scale, 5 being best): <br>
 
-  <%= f.label :taste %>
-  <%= f.number_field :taste %><br>
+  <%= d.label :taste %>
+  <%= d.number_field :taste %><br>
 
-  <%= f.label :dining_experience %>
-  <%= f.number_field :dining_experience %><br>
+  <%= d.label :dining_experience %>
+  <%= d.number_field :dining_experience %><br>
   
-  <%= f.label :overall_value %>
-  <%= f.number_field :overall_value %><br><br>
+  <%= d.label :overall_value %>
+  <%= d.number_field :overall_value %><br><br>
 
-  <%= f.collection_select(:restaurant_id, Restaurant.all, :id, :name, {prompt: "Please Select a Restaurant"}) %><br><br>
+  <%= d.collection_select(:restaurant_id, Restaurant.all, :id, :name, {prompt: "Please Select a Restaurant"}) %><br><br>
 
-  <%= f.submit %><br>
+  <p>Or, create a new restaurant: </p>
+
+  <%= d.fields_for :restaurant, @dish.build_restaurant do |r| %>
+    <%= r.label :name %>
+    <%= r.text_field :name %><br>
+
+    <%= r.label :address %>
+    <%= r.text_field :address %><br>
+
+    <%= r.label :cuisine %>
+    <%= r.text_field :cuisine %><br>
+
+    <%= r.label :dress_code %>
+    <%= r.text_field :dress_code %><br>
+
+    <%= r.label :outdoor_seating %>
+    <%= r.check_box :outdoor_seating %><br>
+
+    <%= r.label :child_friendly %>
+    <%= r.check_box :child_friendly %><br>
+
+    <%= r.label :open_bar %>
+    <%= r.check_box :open_bar %><br>
+    
+    <%= r.label :byob, "BYOB?" %>
+    <%= r.check_box :byob %><br>
+  <% end %>
+
+  <br><%= d.submit %><br>
 <% end %>
