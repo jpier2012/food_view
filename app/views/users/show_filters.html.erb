@@ -1,0 +1,22 @@
+<h1>Add Restaurant Filters</h1>
+
+Select a cuisine:
+
+<%= form_tag edit_filters_path do %>
+    <% Restaurant.cuisines.each do |c| %>
+        <%= label :cuisine, c %>
+        <%= radio_button(:user, :cuisine, c) %><br>
+    <% end %>
+    <br>
+    BYOB? <br>
+    <%= label :byob, "Yes" %>
+    <%= radio_button(:user, :byob, :true) %><br> 
+
+    <%= label :byob, "No" %>
+    <%= radio_button(:user, :byob, :false) %><br>
+
+    <%= label :byob, "Don't Care" %>
+    <%= radio_button(:user, :byob, :nil) %><br>
+
+    <%= submit_tag "Submit" %>
+<% end %>

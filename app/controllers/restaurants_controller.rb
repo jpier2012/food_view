@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
+
     def index
-        @restaurants = current_user.filtered_restaurants
+        @restaurants = Restaurant.all
     end
 
     def new

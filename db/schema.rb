@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 2019_07_16_023112) do
     t.string "name"
     t.string "description"
     t.integer "price"
-    t.integer "taste"
-    t.integer "overall_value"
-    t.integer "dining_experience"
+    t.integer "taste", default: 3
+    t.integer "overall_value", default: 3
+    t.integer "dining_experience", default: 3
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
