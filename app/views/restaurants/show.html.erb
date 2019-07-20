@@ -6,7 +6,7 @@
 <br>
 <h3>Restaurant Dishes</h3>
 <% @restaurant.dishes.each do |dish| %>
-    <%= dish.name %>
+    <%= dish.name %><br>
 <% end %>
 <br>
 <%= link_to "Add Dish to Restaurant", new_restaurant_dish_path(@restaurant) %>
