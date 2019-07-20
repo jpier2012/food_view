@@ -3,7 +3,11 @@ class DishesController < ApplicationController
     before_action :set_dish, only: [:show, :edit, :update, :destroy]
 
     def index
-        @dishes = Dish.all
+        if params[:restaurant_id]
+            @dishes = Restaurant.find_by_id(params[:restaurant_id]).dishes
+        else
+            @dishes = Dish.order_by_restaurant
+        end
     end
 
     def new
@@ -16,9 +20,9 @@ class DishesController < ApplicationController
         end
     end
 
-    def create
+    def create  
         dish = current_user.dishes.create(dish_params)
-        redirect_to restaurant_dishes_path(dish)
+        redirect_to restaurant_dishes_path(dish.restaurant)
     end
 
     def show

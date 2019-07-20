@@ -8,6 +8,8 @@ class Dish < ApplicationRecord
     validates :overall_value, presence: true
     validates :dining_experience, presence: true
 
+    scope :order_by_restaurant, -> { includes(:restaurant).order("restaurants.name") }
+
     def restaurant_name
         self.restaurant.name
     end
