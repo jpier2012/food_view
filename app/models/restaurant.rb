@@ -11,7 +11,6 @@ class Restaurant < ApplicationRecord
     scope :mexican, -> { where(cuisine: "Mexican")}
     scope :french, -> { where(cuisine: "Mexican")}
     
-
     scope :byob, -> { where(byob: true) }
     scope :no_byob, -> { where(byob: false) }
     scope :child_friendly, -> { where(child_friendly: true) }

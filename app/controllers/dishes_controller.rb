@@ -7,12 +7,18 @@ class DishesController < ApplicationController
     end
 
     def new
-        @dish = Dish.new
+        if params[:restaurant_id]
+            @restaurant = Restaurant.find_by_id(params[:restaurant_id])
+            @dish = @restaurant.dishes.build
+        else
+            @dish = Dish.new
+            @restaurant = @dish.build_restaurant
+        end
     end
 
     def create
         dish = current_user.dishes.create(dish_params)
-        redirect_to dish_path(dish)
+        redirect_to restaurant_dishes_path(dish)
     end
 
     def show
@@ -52,8 +58,6 @@ class DishesController < ApplicationController
                     :open_bar,
                     :byob
                 ]
-                
-                
-                )
+            )
         end
 end
