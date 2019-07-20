@@ -1,5 +1,12 @@
 <h1>Restaurant Detail</h1>
 
-<% @restaurant.attribute_names[0..-3].each do |r| %>
+<% @restaurant.attribute_names.each do |r| %>
     <%= r.humanize %>: <%= @restaurant.attributes[r.to_s] %><br>
 <% end %>
+<br>
+<h3>Restaurant Dishes</h3>
+<% @restaurant.dishes.each do |dish| %>
+    <%= dish.name %>
+<% end %>
+<br>
+<%= link_to "Add Dish to Restaurant", new_restaurant_dish_path(@restaurant) %>
