@@ -2,6 +2,7 @@ class Dish < ApplicationRecord
     belongs_to :user
     belongs_to :restaurant
     accepts_nested_attributes_for :restaurant
+
     validates :name, presence: true
     validates :price, presence: true
     validates :taste, presence: true
@@ -15,7 +16,7 @@ class Dish < ApplicationRecord
     end
 
     def restaurant_attributes=(attributes)
-        restaurant = Restaurant.find_or_create_by(name: attributes[:name])
+        restaurant = Restaurant.find_or_create_by(name: attributes[:name], cuisine: attributes[:cuisine])
         self.restaurant = restaurant
     end
 end

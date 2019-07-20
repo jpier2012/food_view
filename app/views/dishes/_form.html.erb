@@ -1,29 +1,40 @@
+  <%= form_for @dish do |d| %>
+    <% if @dish.errors.any? %>
+      <div id="error_explanation">
+        <h2>There were some errors:</h2>
+        <ul>
+          <% @dish.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-<h3>For <%= @dish.restaurant.name %></h3>
+    <div class="field<%= ' field_with_errors' if @dish.errors[:name].any? %>">
+      <%= d.label :name %><%= d.text_field :name %><br>
+    </div>
 
-<%= form_for @dish do |d| %>
-  <%= d.label :name %>
-  <%= d.text_field :name, required: true %><br>
+    <%= d.label :description %>
+    <%= d.text_field :description %><br>
 
-  <%= d.label :description %>
-  <%= d.text_field :description %><br>
-
-  <%= d.label :price, "Price: $" %>
-  <%= d.number_field :price, required: true %><br><br>
+    <div class="field<%= ' field_with_errors' if @dish.errors[:price].any? %>>
+      <%= d.label :price, "Price: $" %>
+      <%= d.number_field :price %><br><br>
+    </div>
 
   <h3>Rate your meal! (1-5 scale, 5 being best):</h3>
 
-  <%= d.label :taste %>
-  <%= d.number_field :taste, in: 1..5, step: 1 %><br>
+    <%= d.label :taste %>
+    <%= d.number_field :taste, in: 1..5, step: 1 %><br>
 
-  <%= d.label :dining_experience %>
-  <%= d.number_field :dining_experience, in: 1..5, step: 1 %><br>
-  
-  <%= d.label :overall_value %>
-  <%= d.number_field :overall_value, in: 1..5, step: 1 %><br><br>
+    <%= d.label :dining_experience %>
+    <%= d.number_field :dining_experience, in: 1..5, step: 1 %><br>
+    
+    <%= d.label :overall_value %>
+    <%= d.number_field :overall_value, in: 1..5, step: 1 %><br><br>
 
 
-  <% if @dish.restaurant.nil? %>
+  <% if @dish.restaurant_id.nil? %>
     <%= render partial: "restaurants/nested_form", locals: { d: d, restaurant: @dish.restaurant } %>
   <% else %>
     <%= d.hidden_field :restaurant_id, value: @dish.restaurant_id %>

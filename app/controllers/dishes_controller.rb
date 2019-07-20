@@ -20,9 +20,21 @@ class DishesController < ApplicationController
         end
     end
 
-    def create  
-        dish = current_user.dishes.create(dish_params)
-        redirect_to restaurant_dishes_path(dish.restaurant)
+    def create
+        if !params[:dish][:restaurant_id].blank?
+            @restaurant = Restaurant.find_by_id(params[:dish][:restaurant_id])
+            @dish = @restaurant.dishes.build(dish_params)
+            @dish.user = current_user
+        else
+            @dish = current_user.dishes.build(dish_params)
+        end
+
+        if @dish.valid?
+            @dish.save
+            redirect_to restaurant_dishes_path(@dish.restaurant)
+        else
+            render :new
+        end
     end
 
     def show

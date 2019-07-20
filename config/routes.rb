@@ -14,9 +14,10 @@ Rails.application.routes.draw do
     delete "logout", to: "devise/sessions#destroy"
   end
 
-  resources :dishes
   resources :restaurants do
     resources :dishes
   end
+
+  resources :dishes, only: [:index, :new, :create]
 
 end
