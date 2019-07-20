@@ -1,0 +1,29 @@
+Select a Restaurant:
+<%= d.collection_select(:restaurant_id, Restaurant.all, :id, :name, {prompt: "Please Select a Restaurant"}) %><br><br>
+
+Or, create a new one: 
+<%= d.fields_for :restaurant, restaurant do |r| %>
+    <%= r.label :name %>
+    <%= r.text_field :name %><br>
+
+    <%= r.label :address %>
+    <%= r.text_field :address %><br>
+
+    <%= r.label :cuisine %>
+    <%= r.text_field :cuisine %><br>
+
+    <%= r.label :dress_code %>
+    <%= r.text_field :dress_code %><br>
+
+    <%= r.label :outdoor_seating %>
+    <%= r.check_box :outdoor_seating %><br>
+
+    <%= r.label :child_friendly %>
+    <%= r.check_box :child_friendly %><br>
+
+    <%= r.label :open_bar %>
+    <%= r.check_box :open_bar %><br>
+    
+    <%= r.label :byob, "BYOB?" %>
+    <%= r.check_box :byob %><br>
+<% end %>
