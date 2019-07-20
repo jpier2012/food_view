@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
     def show_filters
+        @cuisines = Restaurant.cuisines
     end
 
     def edit_filters
-        @cuisines = Restaurant.cuisines
         session[:filters] ||= {}
         session[:filters] = params[:filters].each do |attr, value|
             session[:filters][:"#{attr}"] = value unless value.nil?
