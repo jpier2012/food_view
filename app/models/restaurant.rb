@@ -15,6 +15,10 @@ class Restaurant < ApplicationRecord
     scope :no_byob, -> { where(byob: false) }
     scope :child_friendly, -> { where(child_friendly: true) }
     scope :no_child_friendly, -> { where(child_friendly: false) }
+    scope :open_bar, -> { where(open_bar: true) }
+    scope :no_open_bar, -> { where(open_bar: false) }
+    scope :outdoor_seating, -> { where(outdoor_seating: true) }
+    scope :no_outdoor_seating, -> { where(outdoor_seating: false) }
 
     def self.cuisines
         self.pluck(:cuisine).uniq
