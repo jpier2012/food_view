@@ -1,6 +1,11 @@
 <h1>Restaurant Index</h1>
 
 <ul>
+<% if session[:filters] %>
+    <% session[:filters].each do |filter, value| %>
+        <h3><%= "#{filter.humanize}: #{value}" %></h3>
+    <% end %>
+<% end %>
 <% @restaurants.each do |r| %>
     <li><%= link_to "#{r.name}", restaurant_path(r) %></li>
     <ul>

@@ -3,7 +3,6 @@
 <%= form_tag edit_filters_path do %>
 
     Cuisine<br>
-    
     <% @cuisines.each do |c| %>
         <%= label :cuisine, c %>
         <%= radio_button(:filters, :cuisine, c) %><br> 
@@ -11,7 +10,7 @@
     <br>
     BYOB? <br>
     <%= label :byob, "Yes" %>
-    <%= radio_button(:filters, :byob, :true) %><br> 
+    <%= radio_button(:filters, :byob, :true) %><br>
 
     <%= label :byob, "No" %>
     <%= radio_button(:filters, :byob, :false) %><br><br>
