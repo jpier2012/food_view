@@ -1,4 +1,6 @@
 <%= form_for @restaurant do |f| %>
+    <%= render partial: "application/errors", locals: { object: @restaurant } %>
+
     <%= f.label :name %>
     <%= f.text_field :name %><br>
 

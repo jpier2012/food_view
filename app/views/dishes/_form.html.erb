@@ -1,14 +1,5 @@
   <%= form_for @dish do |d| %>
-    <% if @dish.errors.any? %>
-      <div id="error_explanation">
-        <h2>There were some errors:</h2>
-        <ul>
-          <% @dish.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <%= render partial: "application/errors", locals: { object: @dish } %>
 
     <div class="field<%= ' field_with_errors' if @dish.errors[:name].any? %>">
       <%= d.label :name %><%= d.text_field :name %><br>
@@ -18,8 +9,7 @@
     <%= d.text_field :description %><br>
 
     <div class="field<%= ' field_with_errors' if @dish.errors[:price].any? %>>
-      <%= d.label :price, "Price: $" %>
-      <%= d.number_field :price %><br><br>
+      Price: <%= d.number_field :price %><br><br>
     </div>
 
   <h3>Rate your meal! (1-5 scale, 5 being best):</h3>
