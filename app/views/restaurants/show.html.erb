@@ -5,7 +5,7 @@
 <br>
 <h3>Restaurant Dishes</h3>
 <% @restaurant.dishes.each do |dish| %>
-    <%= dish.name %><br>
+    <%= link_to "#{dish.name}", restaurant_dish_path(@restaurant, dish) %><br>
 <% end %>
 <br>
 <%= link_to "Edit Restaurant Details", edit_restaurant_path(@restaurant) if @restaurant.created_by == current_user.id %><br>

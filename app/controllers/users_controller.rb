@@ -8,12 +8,12 @@ class UsersController < ApplicationController
         session[:filters] = params[:filters].each do |attr, value|
             session[:filters][:"#{attr}"] = value unless value.nil?
         end
-        redirect_to restaurants_path
+        redirect_to all_restaurants_path
     end
 
     def clear_filters
         session.delete(:filters)
-        redirect_to restaurants_path
+        redirect_to all_restaurants_path
     end
 
 end

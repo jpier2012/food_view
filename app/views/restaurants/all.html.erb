@@ -1,3 +1,6 @@
 <h1>All Restaurants</h1>
 
 <%= render "index" %>
+
+<%= link_to "Filter Your View", show_filters_path %><br>
+<%= link_to "Clear Filters", clear_filters_path, method: :delete %>
