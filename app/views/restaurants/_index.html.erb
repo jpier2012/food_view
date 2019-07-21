@@ -1,0 +1,20 @@
+<p>Restaurant count: <%= @restaurants.count %></p>
+
+<ul>
+<% if session[:filters] %>
+    <% session[:filters].each do |filter, value| %>
+        <h3><%= "#{filter.humanize}: #{value}" %></h3>
+    <% end %>
+<% end %>
+<% @restaurants.each do |r| %>
+    <li><%= link_to "#{r.name}", restaurant_path(r) %></li>
+    <ul>
+        <li>Cuisine: <%= r.cuisine %></li>
+        <li>BYOB: <%= r.byob %></li>
+        <li>Child Friendly: <%= r.child_friendly %></li>
+    </ul>
+<% end %>
+</ul>
+
+<%= link_to "Filter Your View", show_filters_path %><br>
+<%= link_to "Clear Filters", clear_filters_path, method: :delete %>

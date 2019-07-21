@@ -7,7 +7,7 @@ class RestaurantsController < ApplicationController
     # if there are attributes present in the restaurant_filters session hash, 
     # this method will call the equivalent scope methods on the Restaurant class to chain the query criteria
     def index
-        @restaurants ||= Restaurant.all
+        @restaurants = current_user.restaurants
         if session[:filters]
             session[:filters].each do |attr, value|
                 value == "false" ? filter = "no_#{attr}" : filter = attr
@@ -15,6 +15,10 @@ class RestaurantsController < ApplicationController
                 @restaurants = @restaurants.send(filter)
             end
         end
+    end
+    
+    def all
+        @restaurants = Restaurant.all
     end
 
     def new

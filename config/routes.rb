@@ -4,9 +4,11 @@ Rails.application.routes.draw do
 
   root to: "application#home"
 
-  get "/filters", to: "users#show_filters", as: "show_filters"
-  post "/filters", to: "users#edit_filters", as: "edit_filters"
-  delete "/filters", to: "users#clear_filters", as: "clear_filters"
+  scope :filters do 
+    get "", to: "users#show_filters", as: "show_filters"
+    post "", to: "users#edit_filters", as: "edit_filters"
+    delete "", to: "users#clear_filters", as: "clear_filters"
+  end
 
   devise_scope :user do 
     get "login", to: "devise/sessions#new"
@@ -14,14 +16,18 @@ Rails.application.routes.draw do
     delete "logout", to: "devise/sessions#destroy"
   end
 
+  scope :dishes do
+    get "all", to: "dishes#all", as: "all_dishes"
+  end
+
+  scope :restaurants do
+    get "all", to: "restaurants#all", as: "all_restaurants"
+  end
+
   resources :restaurants do
     resources :dishes
   end
 
   resources :dishes, only: [:index, :new, :create]
-
-  scope :dishes do
-    get "all", to: "dishes#all", as: "all_dishes"
-  end
 
 end
