@@ -6,7 +6,7 @@ class DishesController < ApplicationController
         if params[:restaurant_id]
             @dishes = Restaurant.find_by_id(params[:restaurant_id]).dishes
         else
-            @dishes = Dish.order_by_restaurant
+            @dishes = current_user.dishes.order_by_restaurant
         end
     end
 

@@ -1,17 +1,3 @@
 <h1>Dish Index</h1>
 
-<ul>
-    <% @dishes.each do |d| %>
-        <li><%= d.name %></li>
-            <ul>
-                <li><%= d.description %></li>
-                <li>$<%= d.price %></li>
-                <li>Taste: <%= d.taste %></li>
-                <li>Dining: <%= d.dining_experience %></li>
-                <li>Overall: <%= d.overall_value %></li>
-                <li>User ID: <%= d.user_id %></li>
-                <li>Restaurant: <%= d.restaurant_name %></li>
-            </ul>
-            <br>
-    <% end %>
-</ul>
+<%= render "index" %>
