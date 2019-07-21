@@ -52,7 +52,12 @@ class DishesController < ApplicationController
 
     def update
         @dish.update(dish_params)
-        redirect_to restaurant_dish_path(@dish)
+
+        if @dish.valid?
+            redirect_to restaurant_dish_path(@dish)
+        else
+            render :edit
+        end
     end
 
     def destroy
