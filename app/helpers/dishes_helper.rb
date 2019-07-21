@@ -1,6 +1,10 @@
 module DishesHelper
     def set_dish
-        @dish ||= current_user.dishes.find_by_id(params[:id])
+        @dish ||= Dish.find_by_id(params[:id])
+    end
+
+    def set_restaurant
+        @restaurant ||= Restaurant.find_by_id(params[:restaurant_id])
     end
 
     def dish_access_redirect

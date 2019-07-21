@@ -1,6 +1,5 @@
 class DishesController < ApplicationController
     include DishesHelper
-    include RestaurantsHelper
     before_action :set_dish, only: [:show, :edit, :update, :destroy]
     before_action :set_restaurant, only: [:show, :edit, :update]
     before_action :dish_access_redirect, only: [:edit, :update, :destroy]
@@ -38,7 +37,7 @@ class DishesController < ApplicationController
 
         if @dish.valid?
             @dish.save
-            redirect_to restaurant_dishes_path(@dish.restaurant)
+            redirect_to restaurant_path(@dish.restaurant)
         else
             render :new
         end
@@ -57,7 +56,7 @@ class DishesController < ApplicationController
 
     def destroy
         @dish.destroy
-        redirect_to restaurant_dishes_path
+        redirect_to restaurant_path(@dish.restaurant)
     end
 
     private

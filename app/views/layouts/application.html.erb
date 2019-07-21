@@ -14,7 +14,6 @@
     <p class="notice"><%= flash[:notice] if flash[:notice] %></p>
     <p class="alert"><%= flash[:alert] if flash[:alert] %></p>
     <%= render partial: "application/errors", locals: { object: current_user } %>
-    
     <%= yield %>
     <%= render "nav" %>
   </body>

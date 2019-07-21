@@ -8,8 +8,8 @@
     <%= d.label :description %>
     <%= d.text_field :description %><br>
 
-    <div class="field<%= ' field_with_errors' if @dish.errors[:price].any? %>>
-      Price: <%= d.number_field :price %><br><br>
+    <div class="field<%= ' field_with_errors' if @dish.errors[:price].any? %>">
+    <%= d.label :price %><%= d.number_field :price %><br><br>
     </div>
 
   <h3>Rate your meal! (1-5 scale, 5 being best):</h3>
