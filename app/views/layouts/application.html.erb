@@ -13,7 +13,7 @@
   
     <p class="notice"><%= flash[:notice] if flash[:notice] %></p>
     <p class="alert"><%= flash[:alert] if flash[:alert] %></p>
-    <% if current_user.errors.any? %>
+    <% if user_signed_in? && current_user.errors.any? %>
       <div id="error_explanation">
         <ul>
           <% current_user.errors.full_messages.each do |message| %>
@@ -22,6 +22,7 @@
         </ul>
       </div>
     <% end %>  
+    
     <%= yield %>
     <%= render "nav" %>
   </body>
