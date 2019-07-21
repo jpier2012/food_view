@@ -1,4 +1,4 @@
-  <%= form_for [@restaurant, @dish] do |d| %>
+  <%= form_for @dish do |d| %>
     <% if @dish.errors.any? %>
       <div id="error_explanation">
         <h2>There were some errors:</h2>
@@ -35,7 +35,7 @@
 
 
   <% if @dish.restaurant_id.nil? %>
-    <%= render partial: "restaurants/nested_form", locals: { d: d, restaurant: @dish.restaurant } %>
+    <%= render partial: "restaurants/nested_form", locals: { d: d, restaurant: @restaurant } %>
   <% else %>
     <%= d.hidden_field :restaurant_id, value: @dish.restaurant_id %>
   <% end %>
