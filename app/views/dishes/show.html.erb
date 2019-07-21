@@ -23,4 +23,4 @@
     <%= @dish.restaurant_name %></li>
 </ul>
 
-<%= link_to "Edit This Dish", edit_dish_path(@dish) if @dish.user == current_user.id%>
+<%= link_to "Edit This Dish", edit_dish_path(@dish) if @dish.user == current_user %>
