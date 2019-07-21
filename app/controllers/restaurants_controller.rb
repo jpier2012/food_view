@@ -26,8 +26,11 @@ class RestaurantsController < ApplicationController
     end
 
     def create
-        restaurant = Restaurant.create(restaurant_params)
-        redirect_to restaurant_path(restaurant)
+        binding.pry
+        @restaurant = Restaurant.new(restaurant_params)
+        @restaurant.created_by = current_user.id
+        @restaurant.save
+        redirect_to restaurant_path(@restaurant)
     end
 
     def show
