@@ -1,4 +1,6 @@
 class RestaurantsController < ApplicationController
+    include RestaurantsHelper
+    before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
 
     # if there are attributes present in the restaurant_filters session hash, 
@@ -24,14 +26,14 @@ class RestaurantsController < ApplicationController
     end
 
     def show
-        @restaurant = Restaurant.find_by_id(params[:id])
     end
 
     def edit
-        @restaurant = Restaurant.find_by_id(params[:id])
     end
 
     def update
+        @restaurant.update(restaurant_params)
+        redirect_to restaurant_path(@restaurant)
     end
 
     def delete
