@@ -7,6 +7,8 @@
         <%= label :cuisine, c %>
         <%= radio_button(:filters, :cuisine, c) %><br> 
     <% end %>
+    <%= label :cuisine, "All" %>
+    <%= radio_button(:filters, :cuisine, "all") %><br>
     <br>
     BYOB? <br>
     <%= label :byob, "Yes" %>
