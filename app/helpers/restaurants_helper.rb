@@ -4,6 +4,7 @@ module RestaurantsHelper
     end
 
     def edit_redirect
-        redirect_to restaurants_path if @restaurant.created_by != current_user.id
+        current_user.errors[:error] << ": You cannot edit a Restaurant you did not create"
+        render :show if @restaurant.created_by != current_user.id
     end
 end

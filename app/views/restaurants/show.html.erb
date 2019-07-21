@@ -1,5 +1,4 @@
 <h1>Restaurant Detail</h1>
-
 <% @restaurant.attribute_names.each do |r| %>
     <%= r.humanize %>: <%= @restaurant.attributes[r.to_s] %><br>
 <% end %>
@@ -9,4 +8,5 @@
     <%= dish.name %><br>
 <% end %>
 <br>
+<%= link_to "Edit Restaurant Details", edit_restaurant_path(@restaurant) if @restaurant.created_by == current_user.id %><br>
 <%= link_to "Add Dish to Restaurant", new_restaurant_dish_path(@restaurant) %>

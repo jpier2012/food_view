@@ -2,11 +2,11 @@
     <ul>
         <% if !devise_controller? %>
             <% if user_signed_in? %>
-                    <%= link_to "Create New Dish", new_dish_path %><br>
-                    <%= link_to "See My Dishes", dishes_path %><br>
-                    <%= link_to "See All Dishes", all_dishes_path %><br>
-                    <%= link_to "Create New Restaurant", new_restaurant_path %><br>
-                    <%= link_to "See All Restaurants", restaurants_path %><br>
+                <%= link_to "Create New Dish", new_dish_path %><br>
+                <%= link_to "See My Dishes", dishes_path %><br>
+                <%= link_to "See All Dishes", all_dishes_path %><br>
+                <%= link_to "Create New Restaurant", new_restaurant_path %><br>
+                <%= link_to "See All Restaurants", restaurants_path %><br>
                 <%= link_to "Log Out", logout_path, method: :delete %><br>
             <% else %>
                 <%= link_to "Log In", login_path %><br>
