@@ -10,11 +10,10 @@
   </head>
 
   <body>
-  
+    <%= render "nav" %>
     <p class="notice"><%= flash[:notice] if flash[:notice] %></p>
     <p class="alert"><%= flash[:alert] if flash[:alert] %></p>
-    <%= render partial: "application/errors", locals: { object: current_user } %>
+    <%= render partial: "application/errors", locals: { object: current_user } if user_signed_in? %>
     <%= yield %>
-    <%= render "nav" %>
   </body>
 </html>

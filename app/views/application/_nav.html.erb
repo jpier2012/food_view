@@ -1,19 +1,20 @@
-<nav>
-    <ul>
-        <% if !devise_controller? %>
-            <% if user_signed_in? %>
-                <%= link_to "Create New Dish", new_dish_path %><br>
-                <%= link_to "See My Dishes", dishes_path %><br>
-                <%= link_to "See All Dishes", all_dishes_path %><br><br>
-                <%= link_to "See My Restaurants", restaurants_path %><br>
-                <%= link_to "See All Restaurants", all_restaurants_path %><br><br>
-                <%= link_to "Create New Restaurant", new_restaurant_path %><br><br>
-                <%= current_user.email %><br>
-                <%= link_to "Log Out", logout_path, method: :delete %><br>
-            <% else %>
-                <%= link_to "Log In", login_path %><br>
-                <%= link_to "Sign Up", signup_path %><br>
+<header>
+    <nav class="topnav">
+        <ul>
+            <% if !devise_controller? %>
+                <% if user_signed_in? %>
+                    <%= link_to "New Dish", new_dish_path %>
+                    <%= link_to "My Dishes", dishes_path %>
+                    <%= link_to "All Dishes", all_dishes_path %>
+                    <%= link_to "My Restaurants", restaurants_path %>
+                    <%= link_to "All Restaurants", all_restaurants_path %>
+                    <%= link_to "New Restaurant", new_restaurant_path %>
+                    <%= link_to "Log Out", logout_path, method: :delete %>
+                <% else %>
+                    <%= link_to "Log In", login_path %>
+                    <%= link_to "Sign Up", signup_path %>
+                <% end %>
             <% end %>
-        <% end %>
-    </ul>
-</nav>
+        </ul>
+    </nav>
+</header>
