@@ -21,6 +21,9 @@
 
     <li><%= label_tag :restaurant, "Restaurant: " %>
     <%= @dish.restaurant_name %></li>
+
+    <li><%= label_tag :user_name, "User: " %>
+    <%= @dish.user_email %></li>
 </ul>
 
-<%= link_to "Edit This Dish", edit_dish_path(@dish) if @dish.user == current_user %>
+<%= link_to "Edit This Dish", edit_dish_path(@dish) if user_created_dish %>

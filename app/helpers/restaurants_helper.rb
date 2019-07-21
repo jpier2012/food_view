@@ -9,4 +9,8 @@ module RestaurantsHelper
             render :show
         end
     end
+
+    def user_created_restaurant
+        @restaurant.created_by == current_user.id 
+    end
 end

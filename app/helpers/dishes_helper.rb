@@ -10,7 +10,7 @@ module DishesHelper
         end
     end
 
-    def user_owns_dish
+    def user_created_dish
         @dish.user == current_user
     end
 end
