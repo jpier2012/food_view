@@ -20,4 +20,8 @@ Rails.application.routes.draw do
 
   resources :dishes, only: [:index, :new, :create]
 
+  scope :dishes do
+    get "all", to: "dishes#all", as: "all_dishes"
+  end
+
 end

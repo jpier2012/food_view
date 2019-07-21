@@ -10,6 +10,10 @@ class DishesController < ApplicationController
         end
     end
 
+    def all
+        @dishes = Dish.all
+    end
+
     def new
         if params[:restaurant_id]
             @restaurant = Restaurant.find_by_id(params[:restaurant_id])
