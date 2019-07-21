@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
     include RestaurantsHelper
     before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
-    before_action :edit_redirect, only: [:edit, :update, :destroy]
+    before_action :restaurant_access_redirect, only: [:edit, :update, :destroy]
 
 
     # if there are attributes present in the restaurant_filters session hash, 

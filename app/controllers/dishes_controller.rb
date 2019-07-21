@@ -1,6 +1,9 @@
 class DishesController < ApplicationController
     include DishesHelper
+    include RestaurantsHelper
     before_action :set_dish, only: [:show, :edit, :update, :destroy]
+    before_action :set_restaurant, only: [:show, :edit, :update]
+    before_action :dish_access_redirect, only: [:edit, :update, :destroy]
 
     def index
         if params[:restaurant_id]
@@ -49,12 +52,12 @@ class DishesController < ApplicationController
 
     def update
         @dish.update(dish_params)
-        redirect_to dish_path(@dish)
+        redirect_to restaurant_dish_path(@dish)
     end
 
     def destroy
         @dish.destroy
-        redirect_to dishes_path
+        redirect_to restaurant_dishes_path
     end
 
     private

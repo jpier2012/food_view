@@ -2,4 +2,4 @@
 
 <%= render "form" %>
 
-<br><%= link_to "Delete This Dish", dish_path(@dish), method: :delete %>
+<br><%= link_to "Delete This Dish", restaurant_dish_path(@restaurant, @dish), method: :delete %>

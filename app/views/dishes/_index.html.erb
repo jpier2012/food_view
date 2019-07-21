@@ -1,6 +1,6 @@
 <ul>
     <% @dishes.each do |d| %>
-        <li><%= d.name %></li>
+        <li><%= link_to "#{d.name}", restaurant_dish_path(d.restaurant_id, d) %></li>
             <ul>
                 <li><%= d.description %></li>
                 <li>$<%= d.price %></li>
