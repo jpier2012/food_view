@@ -16,4 +16,7 @@
     <%= render partial: "application/errors", locals: { object: current_user } if user_signed_in? %>
     <%= yield %>
   </body>
+  <footer>
+    <h4><%= "Viewing as: #{current_user.email}" if user_signed_in? %></h4>
+  </footer>
 </html>

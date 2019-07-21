@@ -1,7 +1,7 @@
-Select a Restaurant:
-<%= d.collection_select(:restaurant_id, Restaurant.all, :id, :name, {prompt: "Please Select a Restaurant"}) %><br><br>
+<h4>Select a Restaurant:</h4>
+<%= d.collection_select(:restaurant_id, Restaurant.all, :id, :name, {prompt: "Please Select a Restaurant"}) %><br>
 
-Or, create a new one: <br>
+<h4>Or, create a new one: </h4>
 <%= d.fields_for :restaurant, restaurant do |r| %>
     <%= r.label :name %>
     <%= r.text_field :name %><br>
