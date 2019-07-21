@@ -1,3 +1,5 @@
+<h3>Dish count: <%= @dishes.count %></h3>
+
 <ul>
     <% @dishes.each do |d| %>
         <li><%= link_to "#{d.name}", restaurant_dish_path(d.restaurant_id, d) %></li>
