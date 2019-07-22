@@ -18,6 +18,7 @@ class DishesController < ApplicationController
     end
 
     def new
+        set_cuisines
         if params[:restaurant_id]
             @restaurant = Restaurant.find_by_id(params[:restaurant_id])
             @dish = @restaurant.dishes.build
