@@ -38,6 +38,7 @@ class DishesController < ApplicationController
         end
 
         if @dish.valid?
+            @dish.restaurant.created_by = current_user.id
             @dish.save
             redirect_to restaurant_path(@dish.restaurant)
         else

@@ -29,6 +29,7 @@ class RestaurantsController < ApplicationController
         @restaurant = Restaurant.new(restaurant_params)
         @restaurant.created_by = current_user.id
 
+        binding.pry
         if @restaurant.valid?
             @restaurant.save
             redirect_to restaurant_path(@restaurant)
