@@ -22,6 +22,7 @@ class RestaurantsController < ApplicationController
 
     def new
         @restaurant = Restaurant.new
+        @cuisines = Restaurant.cuisines
     end
 
     def create
@@ -40,6 +41,7 @@ class RestaurantsController < ApplicationController
     end
 
     def edit
+        @cuisines = Restaurant.cuisines
     end
 
     def update

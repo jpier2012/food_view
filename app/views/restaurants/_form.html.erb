@@ -5,11 +5,14 @@
     <%= f.text_field :name %><br>
 
     <%= f.label :address %>
-    <%= f.text_field :address %><br>
+    <%= f.text_field :address %><br><br>
 
-    <%= f.label :cuisine %>
-    <%= f.text_field :cuisine %><br>
-
+    Choose a cuisine:<br>
+    <% @cuisines.each do |c| %>
+        <%= label :cuisine, c %>
+        <%= radio_button(:restaurant, :cuisine, c) %><br>
+    <% end %>
+    <br>
     <%= f.label :dress_code %>
     <%= f.text_field :dress_code %><br>
 
@@ -23,7 +26,8 @@
     <%= f.check_box :open_bar %><br>
     
     <%= f.label :byob, "BYOB?" %>
-    <%= f.check_box :byob %><br>
-    
+    <%= f.check_box :byob %>
+    <br>
+    <br>
     <%= f.submit %><br>
 <% end %>

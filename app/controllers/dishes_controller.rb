@@ -33,7 +33,6 @@ class DishesController < ApplicationController
             @dish = @restaurant.dishes.build(dish_params)
             @dish.user = current_user
         else
-            binding.pry
             @dish = current_user.dishes.build(dish_params)
         end
 
