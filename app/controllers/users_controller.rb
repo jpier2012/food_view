@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
     def show_filters
-        @cuisines = Restaurant.cuisines
     end
 
     def edit_filters

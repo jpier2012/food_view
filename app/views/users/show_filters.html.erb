@@ -4,7 +4,7 @@
     <h3>Refresh the page to reset filter choices</h3>
 
     <h4>Cuisine</h4>
-    <% @cuisines.each do |c| %>
+    <% Restaurant.cuisines.each do |c| %>
         <%= label :cuisine, c %>
         <%= radio_button(:filters, :cuisine, c) %><br> 
     <% end %>

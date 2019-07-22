@@ -22,14 +22,12 @@ class RestaurantsController < ApplicationController
 
     def new
         @restaurant = Restaurant.new
-        set_cuisines
     end
 
     def create
         @restaurant = Restaurant.new(restaurant_params)
         @restaurant.created_by = current_user.id
 
-        binding.pry
         if @restaurant.valid?
             @restaurant.save
             redirect_to restaurant_path(@restaurant)
@@ -42,7 +40,6 @@ class RestaurantsController < ApplicationController
     end
 
     def edit
-        set_cuisines
     end
 
     def update

@@ -8,10 +8,10 @@
     <%= f.text_field :address %><br><br>
 
     Choose a cuisine:<br>
-    <% @cuisines.each do |c| %>
-        <%= label :cuisine, c %>
-        <%= radio_button(:restaurant, :cuisine, c) %><br>
-    <% end %>
+        <% Restaurant.cuisines.each do |c| %>
+            <%= label :cuisine, c %>
+            <%= radio_button(:restaurant, :cuisine, c) %><br>
+        <% end %>
     <br>
     <%= f.label :dress_code %>
     <%= f.text_field :dress_code %><br>

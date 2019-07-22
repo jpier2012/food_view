@@ -28,7 +28,7 @@
   </div>
 
   <% if @dish.restaurant_id.nil? %>
-    <%= render partial: "restaurants/nested_form", locals: { d: d, restaurant: @restaurant, cuisines: @cuisines } %>
+    <%= render partial: "restaurants/nested_form", locals: { d: d, restaurant: @restaurant } %>
   <% else %>
     <%= d.hidden_field :restaurant_id, value: @dish.restaurant_id %>
   <% end %>

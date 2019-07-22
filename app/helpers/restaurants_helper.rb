@@ -13,8 +13,4 @@ module RestaurantsHelper
     def user_created_restaurant
         @restaurant.created_by == current_user.id
     end
-
-    def set_cuisines
-        @cuisines ||= Restaurant.cuisines
-    end
 end
