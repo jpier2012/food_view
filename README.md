@@ -1,6 +1,6 @@
 # README
 
-# MisterFitness
+# FoodView
 
 Welcome to FoodView! This is third project as a Flatiron school student.
 
