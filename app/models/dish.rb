@@ -4,10 +4,10 @@ class Dish < ApplicationRecord
     accepts_nested_attributes_for :restaurant
 
     validates :name, presence: true
-    validates :price, presence: true
-    validates :taste, presence: true
-    validates :overall_value, presence: true
-    validates :dining_experience, presence: true
+    validates :price, presence: true, numericality: true
+    validates :taste, presence: true, inclusion: { in: [1, 2, 3, 4, 5] }
+    validates :overall_value, presence: true, inclusion: { in: [1, 2, 3, 4, 5] }
+    validates :dining_experience, presence: true, inclusion: { in: [1, 2, 3, 4, 5] }
 
     scope :order_by_restaurant, -> { includes(:restaurant).order("restaurants.name") }
 
