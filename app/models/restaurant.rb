@@ -3,6 +3,10 @@ class Restaurant < ApplicationRecord
     has_many :users, through: :dishes
     validates :name, presence: true
     validates :cuisine, presence: true
+    validates :byob, inclusion: { in: [true, false] }
+    validates :outdoor_seating, inclusion: { in: [true, false] }
+    validates :child_friendly, inclusion: { in: [true, false] }
+    validates :open_bar, inclusion: { in: [true, false] }
 
     scope :american, -> { where(cuisine: "American")}
     scope :thai, -> { where(cuisine: "Thai")}

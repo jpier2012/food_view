@@ -82,11 +82,7 @@ class DishesController < ApplicationController
                     :name,
                     :description,
                     :cuisine,
-                    :dress_code,
-                    :outdoor_seating,
-                    :child_friendly,
-                    :open_bar,
-                    :byob
+                    :dress_code
                 ]
             )
         end
