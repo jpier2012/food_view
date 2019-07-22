@@ -3,34 +3,34 @@
 <%= form_tag edit_filters_path do %>
     <h3>Refresh the page to reset filter choices</h3>
 
-    Cuisine<br>
+    <h4>Cuisine</h4>
     <% @cuisines.each do |c| %>
         <%= label :cuisine, c %>
         <%= radio_button(:filters, :cuisine, c) %><br> 
     <% end %>
     <br>
-    BYOB? <br>
+    <h4>BYOB?</h4>
     <%= label :byob, "Yes" %>
     <%= radio_button(:filters, :byob, :true) %><br>
 
     <%= label :byob, "No" %>
     <%= radio_button(:filters, :byob, :false) %><br><br>
 
-    Child Friendly? <br>
+    <h4>Child Friendly?</h4>
     <%= label :child_friendly, "Yes" %>
     <%= radio_button(:filters, :child_friendly, :true) %><br> 
 
     <%= label :child_friendly, "No" %>
     <%= radio_button(:filters, :child_friendly, :false) %><br><br>
 
-    Outdoor Seating? <br>
+    <h4>Outdoor Seating?</h4>
     <%= label :outdoor_seating, "Yes" %>
     <%= radio_button(:filters, :outdoor_seating, :true) %><br> 
 
     <%= label :outdoor_seating, "No" %>
     <%= radio_button(:filters, :outdoor_seating, :false) %><br><br>
 
-    Open Bar? <br>
+    <h4>Open Bar?</h4>
     <%= label :open_bar, "Yes" %>
     <%= radio_button(:filters, :open_bar, :true) %><br> 
 
