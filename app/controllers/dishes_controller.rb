@@ -35,10 +35,10 @@ class DishesController < ApplicationController
             @dish.user = current_user
         else
             @dish = current_user.dishes.build(dish_params)
+            @dish.restaurant.created_by = current_user.id
         end
 
         if @dish.valid?
-            @dish.restaurant.created_by = current_user.id
             @dish.save
             redirect_to restaurant_path(@dish.restaurant)
         else
