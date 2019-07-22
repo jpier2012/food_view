@@ -14,14 +14,18 @@
 
   <h3>Rate it! (1-5 scale, 5 being best):</h3>
 
-  <%= d.label :taste %>
-  <%= d.number_field :taste %><br>
 
-  <%= d.label :dining_experience %>
-  <%= d.number_field :dining_experience %><br>
-  
-  <%= d.label :overall_value %>
-  <%= d.number_field :overall_value %><br><br>
+  <div class="field<%= ' field_with_errors' if @dish.errors[:taste].any? %>">
+    <%= d.label :taste %><%= d.number_field :taste %><br>
+  </div>
+
+  <div class="field<%= ' field_wit_errors' if @dish.errors[:dining_experience].any? %>">
+    <%= d.label :dining_experience %><%= d.number_field :dining_experience %><br>
+  </div>
+
+  <div class="field<%= ' field_wit_errors' if @dish.errors[:overall_value].any? %>">
+    <%= d.label :overall_value %><%= d.number_field :overall_value %><br>
+  </div>
 
   <% if @dish.restaurant_id.nil? %>
     <%= render partial: "restaurants/nested_form", locals: { d: d, restaurant: @restaurant, cuisines: @cuisines } %>
