@@ -3,13 +3,12 @@ class RestaurantsController < ApplicationController
     before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
     before_action :restaurant_access_redirect, only: [:edit, :update, :destroy]
 
-
-    # if there are attributes present in the restaurant_filters session hash, 
-    # this method will call the equivalent scope methods on the Restaurant class to chain the query criteria
     def index
         @restaurants = current_user.restaurants
     end
-    
+
+    # if there are attributes present in the restaurant_filters session hash, 
+    # this method will call the equivalent scope methods on the Restaurant class to chain the query criteria
     def all
         @restaurants = Restaurant.all
         if session[:filters]
@@ -45,7 +44,12 @@ class RestaurantsController < ApplicationController
 
     def update
         @restaurant.update(restaurant_params)
-        redirect_to restaurant_path(@restaurant)
+
+        if @restaurant.valid?
+            redirect_to restaurant_path(@restaurant)
+        else
+            render :edit
+        end
     end
 
     def destroy

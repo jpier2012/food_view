@@ -14,7 +14,7 @@ class DishesController < ApplicationController
     end
 
     def all
-        @dishes = Dish.all
+        @dishes = Dish.order_by_restaurant
     end
 
     def new
@@ -33,6 +33,7 @@ class DishesController < ApplicationController
             @dish = @restaurant.dishes.build(dish_params)
             @dish.user = current_user
         else
+            binding.pry
             @dish = current_user.dishes.build(dish_params)
         end
 
