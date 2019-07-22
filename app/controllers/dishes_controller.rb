@@ -34,7 +34,6 @@ class DishesController < ApplicationController
             @dish = @restaurant.dishes.build(dish_params)
             @dish.user = current_user
         else
-            binding.pry
             @dish = current_user.dishes.build(dish_params)
             @dish.restaurant.created_by = current_user.id
         end
