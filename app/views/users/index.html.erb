@@ -1,0 +1,12 @@
+<h1>Who's Who in FoodView?</h1>
+
+<ul>
+  <% @users.each do |user| %>
+    <li><%= link_to "#{user.email}", user_path(user) %></li>
+    <ul>
+      <li># of Dishes: <%= user.dishes.count %></li>
+      <li># of Restaurants: <%= user.restaurants.count %></li>
+    </ul>
+    <br>
+  <% end %>
+</ul>
