@@ -18,9 +18,4 @@ class Dish < ApplicationRecord
     def user_email
         self.user.email
     end
-
-    def restaurant_attributes=(attributes)
-        restaurant = Restaurant.find_or_create_by(name: attributes[:name], cuisine: attributes[:cuisine])
-        self.restaurant = restaurant
-    end
 end
