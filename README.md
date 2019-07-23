@@ -11,7 +11,7 @@ Clone the github repository by entering the following commands into your IDE ter
 
 Change to the cloned Beautiful Billboard directory:
 ```cd food_view```
-
+`
 Install all required gems:
 ```bundle```
 
@@ -20,6 +20,28 @@ Migrate the database:
 
 Seed the database (optional):
 ```rake db:seed```
+
+To use Github OAuth:
+
+Login to your github account, navigate to setting > Developer settings > OAuth Apps > New OAuth app — Github application page.
+
+Enter homePage URL:
+
+```http://localhost:3000```
+
+Enter callback URL:
+
+```http://localhost:3000/users/auth/github/callback```
+
+After that, click on Register application. Hence, you will redirect to the application page which has your client ID and Client secret. 
+
+Create a .env file in the home directory of the app (food_view)
+
+Add the following text to it, copying the github key and secret from the app, then save.
+```
+GITHUB_KEY=<<<your_key>>>
+GITHUB_SECRET=<<<your_secret>>>
+```
 
 Initiate rails server:
 ```rails s```
