@@ -1,20 +1,21 @@
 <h3>Restaurant count: <%= @restaurants.count %></h3>
 
-<ul>
 <% if session[:filters] %>
     <% session[:filters].each do |filter, value| %>
         <h3><%= "#{filter.humanize}: #{value}" %></h3>
     <% end %>
 <% end %>
-<% @restaurants.each do |r| %>
-    <li><%= link_to "#{r.name}", restaurant_path(r) %></li>
-    <ul>
-        <li>Cuisine: <%= r.cuisine %></li>
-        <li>BYOB: <%= r.byob %></li>
-        <li>Child Friendly: <%= r.child_friendly %></li>
-        <li>Open Bar: <%= r.open_bar %></li>
-        <li>Outdoor Seating: <%= r.outdoor_seating %></li>
-        <br>
-    </ul>
-<% end %>
+
+<ul>
+    <% @restaurants.each do |r| %>
+        <li><%= link_to "#{r.name}", restaurant_path(r) %></li>
+        <ul>
+            <li>Cuisine: <%= r.cuisine %></li>
+            <li>BYOB: <%= r.byob %></li>
+            <li>Child Friendly: <%= r.child_friendly %></li>
+            <li>Open Bar: <%= r.open_bar %></li>
+            <li>Outdoor Seating: <%= r.outdoor_seating %></li>
+            <br>
+        </ul>
+    <% end %>
 </ul>
