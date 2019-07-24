@@ -13,7 +13,7 @@ class Restaurant < ApplicationRecord
     scope :indian, -> { where(cuisine: "Indian")}
     scope :chinese, -> { where(cuisine: "Chinese")}
     scope :mexican, -> { where(cuisine: "Mexican")}
-    scope :french, -> { where(cuisine: "Mexican")}
+    scope :french, -> { where(cuisine: "French")}
     scope :bbq, -> { where(cuisine: "BBQ")}
     
     scope :byob, -> { where(byob: true) }
