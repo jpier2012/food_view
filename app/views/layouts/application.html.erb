@@ -10,13 +10,16 @@
   </head>
 
   <body>
-    <%= render "nav" %>
-    <p class="notice"><%= flash[:notice] if flash[:notice] %></p>
-    <p class="alert"><%= flash[:alert] if flash[:alert] %></p>
-    <%= render partial: "application/errors", locals: { object: current_user } if user_signed_in? %>
-    <%= yield %>
+    <div class="wrapper">
+      <%= render "nav" %>
+      <p id="error"><%= flash[:notice] if flash[:notice] %></p>
+      <p id="error"><%= flash[:alert] if flash[:alert] %></p>
+      <%= render partial: "application/errors", locals: { object: current_user } if user_signed_in? %>
+
+      <%= yield %>
+    <div>
   </body>
   <footer>
-    <h4><%= "Viewing as: #{current_user.email}" if user_signed_in? %></h4>
+    <h4><%= "Current User: #{current_user.email}" if user_signed_in? %></h4>
   </footer>
 </html>

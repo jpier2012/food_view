@@ -25,5 +25,6 @@
     <li><%= label_tag :user_name, "User: " %>
     <%= @dish.user_email %></li>
 </ul>
-
-<%= link_to "Edit This Dish", edit_dish_path(@dish) if user_created_dish %>
+<% if user_created_dish %>
+    <%= link_to "Edit This Dish", edit_dish_path(@dish), html_options = { id: "button"} %>
+<% end %>

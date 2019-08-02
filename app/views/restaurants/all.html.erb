@@ -2,5 +2,7 @@
 
 <%= render "index" %>
 
-<%= link_to "Filter Your View", show_filters_path %><br>
-<%= link_to "Clear Filters", clear_filters_path, method: :delete %>
+<%= link_to "Filter Your View", show_filters_path, html_options = { id: "button"} %>
+<br>
+<br>
+<%= link_to "Clear Filters", clear_filters_path, html_options = { id: "button",  method: :delete }  %>

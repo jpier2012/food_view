@@ -122,7 +122,7 @@
     height: 80px;
   }
 
-  #button, #submit {
+  #button {
     background-color: wheat;
     border: none;
     color: black;
