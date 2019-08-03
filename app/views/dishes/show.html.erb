@@ -1,5 +1,9 @@
 <h1>Dish Detail</h1>
 
+<% if @dish.photo.attached? %>
+    <%= image_tag url_for(@dish.photo) %>
+<% end %>
+
 <ul>
     <li><%= label_tag :name, "Name: " %>
     <%= @dish.name %></li>

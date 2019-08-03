@@ -1,4 +1,6 @@
-<h3>Restaurant count: <%= @restaurants.count %></h3>
+<h3>Click restaurant name to view</h3>
+<h4>Count: <%= @restaurants.count %></h4>
+
 
 <% if session[:filters] %>
     <% session[:filters].each do |filter, value| %>
@@ -6,9 +8,8 @@
     <% end %>
 <% end %>
 
-<ul>
     <% @restaurants.each do |r| %>
-        <li><%= link_to "#{r.name}", restaurant_path(r) %></li>
+        <p><%= link_to "#{r.name}", restaurant_path(r) %></p>
         <ul>
             <li>Cuisine: <%= r.cuisine %></li>
             <li>BYOB: <%= r.byob %></li>
@@ -18,4 +19,3 @@
             <br>
         </ul>
     <% end %>
-</ul>
