@@ -97,9 +97,8 @@
     overflow: hidden;
   }
 
-  input#number {
-    resize: horizontal;
-    width: 40px;
+  table {
+    width: 35%;
   }
 
   text {

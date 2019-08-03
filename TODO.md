@@ -1,8 +1,8 @@
-0) Restaurant show page attributes
 1) Change link style
 2) Change description fields to text area tags
 3) price field only allows integers - "float_field" instead of number field?
-4) add photos to dishes
+4) change booleans to "yes/no" in show pages
+5) add photos to dishes
 
 create admin login, can alter users and restaurants
 uniqueness validation for restaurant names
