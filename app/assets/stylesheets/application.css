@@ -159,3 +159,8 @@
   .closebtn:hover {
     color: black;
   }
+
+  img {
+    max-width: 75%;
+    height: auto;
+  }

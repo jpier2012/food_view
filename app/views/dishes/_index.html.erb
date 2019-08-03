@@ -2,6 +2,9 @@
 
 <ul>
     <% @dishes.each do |d| %>
+        <% if d.photo.attached? %>
+            <%= image_tag url_for(d.photo), class: "index-view" %>
+        <% end %>
         <li><%= link_to "#{d.name}", restaurant_dish_path(d.restaurant_id, d) %></li>
             <ul>
                 <li>$<%= d.price %></li>
