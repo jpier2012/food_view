@@ -1,7 +1,12 @@
 <h1>Restaurant Detail</h1>
-<% @restaurant.attribute_names.each do |r| %>
-    <%= r.humanize %>: <%= @restaurant.attributes[r.to_s] %><br>
-<% end %>
+Name: <%= @restaurant.name %><br>
+Address: <%= @restaurant.address %><br>
+Cuisine: <%= @restaurant.cuisine %><br>
+Dress Code: <%= @restaurant.dress_code %><br>
+Outdoor Seating: <%= @restaurant.outdoor_seating %><br>
+Child Friendly: <%= @restaurant.child_friendly %><br>
+BYOB: <%= @restaurant.byob %><br>
+Open Bar: <%= @restaurant.open_bar %><br>
 <br>
 <h3>Restaurant Dishes</h3>
 <ul>
