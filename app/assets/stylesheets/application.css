@@ -17,6 +17,19 @@
   html, body {
     margin: 0 2.5% 2.5% 5%;
     line-height: 18px;
+    background-color: ivory;
+  }
+
+  a {
+    font-size: 24px;
+    text-decoration: none;
+    font-style: italic;
+    background-color: wheat;
+    color: black;
+  }
+
+  a:visited {
+    text-decoration: none;
   }
 
   .field_with_errors {
@@ -46,7 +59,7 @@
   }
   
   /* Change the color of links on hover */
-  .topnav a:hover {
+  a:hover {
     background-color: lightblue;
     color: black;
   }
