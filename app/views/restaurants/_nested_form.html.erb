@@ -1,17 +1,24 @@
-<h4>Select a Restaurant:</h4>
+<h3>Where did you eat?</h3>
 <%= d.collection_select(:restaurant_id, Restaurant.all, :id, :name, {prompt: "Please Select a Restaurant"}) %><br>
 
 <h4>Or, create a new one: </h4>
 <%= d.fields_for :restaurant, restaurant do |r| %>
-    <%= r.label :name %>
-    <%= r.text_field :name %><br>
-
-    <%= r.label :address %>
-    <%= r.text_field :address %><br>
-
-    <%= r.label :cuisine %>
-    <%= r.text_field :cuisine %><br>
-
-    <%= r.label :dress_code %>
-    <%= r.text_field :dress_code %><br>
+  <table>
+    <tr>
+      <td><%= r.label :name %></td>
+      <td><%= r.text_field :name %></td>
+    </tr>
+    <tr>
+      <td><%= r.label :address %></td>
+      <td><%= r.text_field :address %></td>
+    </tr>
+    <tr>
+      <td><%= r.label :cuisine %></td>
+      <td><%= r.text_field :cuisine %></td>
+    </tr>
+    <tr>
+      <td><%= r.label :dress_code %></td>
+      <td><%= r.text_field :dress_code %></td>
+    </tr>
+  </table>
 <% end %>

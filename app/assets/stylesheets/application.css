@@ -29,7 +29,7 @@
     color: black;
   }
 
-  [type='submit'], [type='file'], #button {
+  select, [type='submit'], #button {
     background-color: wheat;
     border: none;
     color: black;
@@ -47,7 +47,7 @@
     padding: 0;
   }
 
-  a:hover, [type='submit']:hover {
+  a:hover, [type='submit']:hover, select:hover {
     background-color: lightblue;
     color: black;
   }
@@ -55,6 +55,19 @@
   a:visited {
     text-decoration: none;
   }
+
+  [type='file'] {
+    background-color: wheat;
+    border: none;
+    color: black;
+    padding: 6px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: serif;
+    font-style: italic;
+    font-size: 12px;
+}
 
   .field_with_errors {
       color: red;
@@ -125,6 +138,10 @@
   table {
     min-width: 35%;
     max-width: 50%;
+  }
+
+  td:first-child {
+    min-width: 100px;
   }
 
   .closebtn {
