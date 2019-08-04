@@ -1,38 +1,8 @@
 <h1>Restaurant Detail</h1>
-<table>
-    <tr>
-        <td>Name: </td>
-        <td><%= @restaurant.name %></td>
-    </tr>
-    <tr>
-        <td>Address: </td>
-        <td><%= @restaurant.address %></td>
-    </tr>
-    <tr>
-        <td>Cuisine: </td>
-        <td><%= @restaurant.cuisine %></td>
-    </tr>
-    <tr>
-        <td>Dress Code:</td>
-        <td><%= @restaurant.dress_code %></td>
-    </tr>
-    <tr>
-        <td>Outdoor Seating: </td>
-        <td><%= @restaurant.outdoor_seating %></td>
-    </tr>
-     <tr>
-        <td>Child Friendly: </td>
-        <td><%= @restaurant.child_friendly %></td>
-    </tr>
-     <tr>
-        <td>BYOB: </td>
-        <td><%= @restaurant.byob %></td>
-    </tr>
-     <tr>
-        <td>Open Bar: </td>
-        <td><%= @restaurant.open_bar %></td>
-    </tr>
-</table>
+
+<h2><%= @restaurant.name %></h2>
+
+<%= render partial: "detail", locals: { restaurant: @restaurant } %>
 
 <br>
 <h3>Restaurant Dishes</h3>

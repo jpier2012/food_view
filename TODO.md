@@ -1,6 +1,4 @@
 
-5) add photos to dishes
-5) style form submits to look like other buttons
 2) put view pages in tables
 3) put indexes in tables
 4) add id's to table header column
