@@ -1,18 +1,36 @@
 <h3>Dish count: <%= @dishes.count %></h3>
 
-<ul>
-    <% @dishes.each do |d| %>
+<% @dishes.each do |d| %>
+        <br>
+        <%= link_to "#{d.name}", restaurant_dish_path(d.restaurant_id, d) %>
+        <br>
+        <br>
+        <br>
         <% if d.photo.attached? %>
-            <%= image_tag url_for(d.photo), class: "index-view" %>
+            <%= image_tag url_for(d.photo), class: "index-view" %><br><br> 
         <% end %>
-        <li><%= link_to "#{d.name}", restaurant_dish_path(d.restaurant_id, d) %></li>
-            <ul>
-                <li>$<%= d.price %></li>
-                <li>Taste: <%= d.taste %></li>
-                <li>Dining: <%= d.dining_experience %></li>
-                <li>Overall: <%= d.overall_value %></li>
-                <li>Restaurant: <%= d.restaurant_name %></li>
-            </ul>
-            <br>
-    <% end %>
-</ul>
+        <table>
+            <tr>
+                <td>Price: </td>
+                <td>$<%= d.price %></td>
+            </tr>
+            <tr>
+                <td>Taste: </td>
+                <td><%= d.taste %> / 5</td>
+            </tr>
+            <tr>
+                <td>Dining: </td>
+                <td><%= d.dining_experience %> / 5</td>
+            </tr>
+            <tr>
+                <td>Overall:</td>
+                <td><%= d.overall_value %> / 5</td>
+            </tr>
+            <tr>
+                <td>Restaurant Name: </td>
+                <td><%= d.restaurant_name %></td>
+            </tr>
+        </table>
+        <hr>
+        <br>
+<% end %>
