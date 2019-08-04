@@ -1,6 +1,3 @@
-
-2) put view pages in tables
-3) put indexes in tables
 4) add id's to table header column
 2) Change description fields to text area tags
 3) price field only allows integers - "float_field" instead of number field?

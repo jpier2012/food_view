@@ -29,7 +29,7 @@
     color: black;
   }
 
-  input[type='submit'], #button {
+  input[type='submit'], input[type='file'], #button {
     background-color: wheat;
     border: none;
     color: black;
@@ -127,27 +127,6 @@
     min-width: 35%;
     max-width: 50%;
   }
-
-  text {
-    width: auto;
-    min-width: 0px;
-  }
-
-  textarea {
-    font-family: Sans-Serif;
-    resize: auto;
-    min-width: 0px;
-  }
-
-  textarea:active {
-    width: auto;
-  }
-
-  textarea:focus {
-    width: 200px;
-    height: 80px;
-  }
-
 
   .closebtn {
     margin-left: 15px;
