@@ -4,7 +4,7 @@ class RestaurantsController < ApplicationController
     before_action :restaurant_access_redirect, only: [:edit, :update, :destroy]
 
     def index
-        @restaurants = current_user.restaurants
+        @restaurants = current_user.restaurants.uniq
     end
 
     # if there are attributes present in the restaurant_filters session hash, 
