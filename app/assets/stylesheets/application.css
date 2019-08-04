@@ -47,7 +47,7 @@
     padding: 0;
   }
 
-  a:hover, [type='submit']:hover, select:hover {
+  a:hover, [type='submit']:hover, select:hover, #button:hover {
     background-color: lightblue;
     color: black;
   }
@@ -141,7 +141,7 @@
   }
 
   td:first-child {
-    min-width: 100px;
+    min-width: 80px;
   }
 
   .closebtn {

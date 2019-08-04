@@ -40,7 +40,8 @@ class DishesController < ApplicationController
         if @dish.valid?
             @dish.photo.attach(params[:photo]) if params[:photo]
             @dish.save
-            redirect_to restaurant_path(@dish.restaurant)
+            binding.pry
+            redirect_to restaurant_dish_path(@dish.restaurant, @dish)
         else
             render :new
         end
