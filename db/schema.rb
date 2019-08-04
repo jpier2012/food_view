@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_08_03_011427) do
   create_table "dishes", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "price"
+    t.float "price"
     t.integer "taste", default: 3
     t.integer "overall_value", default: 3
     t.integer "dining_experience", default: 3
