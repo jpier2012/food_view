@@ -1,33 +1,6 @@
-<h1>Dish Detail</h1>
-    <% if @dish.photo.attached? %>
-        <%= image_tag url_for(@dish.photo) %>
-    <% end %>
-
-<ul>
-    <li><%= label_tag :name, "Name: " %>
-    <%= @dish.name %></li>
-
-    <li><%= label_tag :description, "Description: " %>
-    <%= @dish.description %></li>
-
-    <li><%= label_tag :price, "Price: " %>
-    <%= @dish.price %></li>
-
-    <li><%= label_tag :taste, "Taste: " %>
-    <%= @dish.taste %></li>
-
-    <li><%= label_tag :overall_value, "Overall Value: " %>
-    <%= @dish.overall_value %></li>
-
-    <li><%= label_tag :dining_experience, "Dining Experience: " %>
-    <%= @dish.dining_experience %></li>
-
-    <li><%= label_tag :restaurant, "Restaurant: " %>
-    <%= @dish.restaurant_name %></li>
-
-    <li><%= label_tag :user_name, "User: " %>
-    <%= @dish.user_email %></li>
-</ul>
+<h1><%= @dish.name %></h1>
+<%= render partial: "detail", locals: { dish: @dish } %>
+<br>
 <% if user_created_dish %>
     <%= link_to "Edit This Dish", edit_dish_path(@dish), html_options = { id: "button"} %>
 <% end %>

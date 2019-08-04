@@ -8,7 +8,7 @@
 <h3>Restaurant Dishes</h3>
 <ul>
     <% @restaurant.dishes.each do |dish| %>
-        <li><%= link_to "#{dish.name}", restaurant_dish_path(@restaurant, dish) %></li>
+        <li><%= link_to "#{dish.name}", restaurant_dish_path(@restaurant, dish), html_options = { id: "index-link"} %></li>
         <ul>
             <li>Created By <%= dish.user_email %></li>
         </ul>
