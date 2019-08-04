@@ -29,7 +29,7 @@
     color: black;
   }
 
-  input[type='submit'], input[type='file'], #button {
+  [type='submit'], [type='file'], #button {
     background-color: wheat;
     border: none;
     color: black;
@@ -45,6 +45,11 @@
   #index-link {
     font-size: 20px; 
     padding: 0;
+  }
+
+  a:hover, [type='submit']:hover {
+    background-color: lightblue;
+    color: black;
   }
 
   a:visited {
@@ -75,12 +80,6 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-  }
-  
-  /* Change the color of links on hover */
-  a:hover {
-    background-color: lightblue;
-    color: black;
   }
 
   footer {
