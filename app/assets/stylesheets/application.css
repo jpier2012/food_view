@@ -23,9 +23,23 @@
   a {
     font-size: 24px;
     text-decoration: none;
+    padding: 6px 6px;
     font-style: italic;
     background-color: wheat;
     color: black;
+  }
+
+  input[type='submit'], #button {
+    background-color: wheat;
+    border: none;
+    color: black;
+    padding: 6px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: serif;
+    font-style: italic;
+    font-size: 16px;
   }
 
   a:visited {
@@ -62,12 +76,6 @@
   a:hover {
     background-color: lightblue;
     color: black;
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #4CAF50;
-    color: white;
   }
 
   footer {
@@ -134,16 +142,6 @@
     height: 80px;
   }
 
-  #button {
-    background-color: wheat;
-    border: none;
-    color: black;
-    padding: 6px 6px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
 
   .closebtn {
     margin-left: 15px;
