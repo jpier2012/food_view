@@ -2,7 +2,9 @@
 
 # FoodView
 
-Welcome to FoodView! This is third project as a Flatiron school student.
+Welcome to FoodView! With this app you can take pictures of your food to post online for all the world to see! You'll be able to rate each dish you create and also see Dishes created by other people. You can also add your own restaurants, or use those created by others.
+
+This is my third project as a Flatiron school student.
 
 # Installation
 
