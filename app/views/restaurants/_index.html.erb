@@ -1,10 +1,9 @@
 <h3>Click restaurant name to view</h3>
 <h4>Count: <%= @restaurants.count %></h4>
 
-
 <% if session[:filters] %>
     <% session[:filters].each do |filter, value| %>
-        <h3><%= "#{filter.humanize}: #{value}" %></h3>
+        <h3><em><%= "#{filter.humanize}: #{value}" %></em></h3>
     <% end %>
 <% end %>
 

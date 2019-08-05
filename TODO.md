@@ -1,4 +1,4 @@
-
+4) change filter to be more flexible
 4) add id's to table header column
 
 create admin login, can alter users and restaurants

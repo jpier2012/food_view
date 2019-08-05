@@ -28,4 +28,8 @@ class Restaurant < ApplicationRecord
     def self.cuisines
         self.pluck(:cuisine).uniq
     end
+
+    def self.cuisine(cuisine)
+        self.where(cuisine: cuisine)
+    end
 end

@@ -14,8 +14,8 @@ class RestaurantsController < ApplicationController
         if session[:filters]
             session[:filters].each do |attr, value|
                 value == "false" ? filter = "no_#{attr}" : filter = attr
-                filter = value.downcase.strip if attr == "cuisine"
-                @restaurants = @restaurants.send(filter)
+                @restaurants = @restaurants.send(filter) if value.in? ["true", "false"]
+                @restaurants = @restaurants.cuisine(value) if attr == "cuisine"
             end
         end
     end
