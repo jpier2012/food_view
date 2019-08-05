@@ -25,4 +25,8 @@
         <td>Restaurant: </td>
         <td><%= dish.restaurant_name %></td>
     </tr>
+    <tr>
+        <td>Eaten: </td>
+        <td><%= dish.created_at.strftime("%b %e, %Y") %></td>
+    </tr>
 </table>
