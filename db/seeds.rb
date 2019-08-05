@@ -16,10 +16,20 @@ mexican = Restaurant.create(name: "Martin's Tacos", address: "Hanover, IL", cuis
 bbq = Restaurant.create(name: "Billy's BBQ", address: "Buffalo, NY", cuisine: "BBQ", open_bar: true, created_by: user2.id)
 french = Restaurant.create(name: "Jean's Croissants", address: "Paris, France", cuisine: "French", open_bar: true, byob: true, created_by: user2.id)
 
-user.dishes.create(name: "Cheeseburger", price: 10, restaurant: american)
-user.dishes.create(name: "Kung Pao Chicken", price: 10, restaurant: chinese)
-user.dishes.create(name: "Steak Tacos", price: 10, restaurant: mexican)
+a = user.dishes.create(name: "Cheeseburger", price: 10, restaurant: american)
+a.photo.attach(io: File.open('app/assets/images/red-robin-burger-gourmet-cheeseburger_large.jpg'), filename: 'red-robin-burger-gourmet-cheeseburger_large.jpg', content_type: 'image/jpg')
 
-user2.dishes.create(name: "Pad Thai", price: 10, restaurant: thai)
-user2.dishes.create(name: "Full Rack of Ribs", price: 10, restaurant: bbq)
-user2.dishes.create(name: "Some fondant", price: 10, restaurant: french)
+b = user.dishes.create(name: "Kung Pao Chicken", price: 12, restaurant: chinese)
+b.photo.attach(io: File.open('app/assets/images/kung-pao-chicken-thumb.jpg'), filename: 'kung-pao-chicken-thumb.jpg', content_type: 'image/jpg')
+
+c = user.dishes.create(name: "Steak Tacos", price: 6.99, restaurant: mexican)
+c.photo.attach(io: File.open('app/assets/images/menu_small__Steak_Tacos_with_Chimichurri_THUMB.jpg'), filename: 'menu_small__Steak_Tacos_with_Chimichurri_THUMB.jpg', content_type: 'image/jpg')
+
+d = user2.dishes.create(name: "Pad Thai", price: 7.95, restaurant: thai)
+d.photo.attach(io: File.open('app/assets/images/Pad-Thai-7.jpg'), filename: 'Pad-Thai-7.jpg', content_type: 'image/jpg')
+
+e = user2.dishes.create(name: "Full Rack of Ribs", price: 18.95, restaurant: bbq)
+e.photo.attach(io: File.open('app/assets/images/full-rack-ribs.jpg'), filename: 'full-rack-ribs.jpg', content_type: 'image/jpg')
+
+f = user2.dishes.create(name: "A Bag of Croissants", price: 10.95, restaurant: french)
+f.photo.attach(io: File.open('app/assets/images/croissants-1-copy-1024x683.jpg'), filename: 'croissants-1-copy-1024x683.jpg', content_type: 'image/jpg')
