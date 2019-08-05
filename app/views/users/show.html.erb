@@ -17,7 +17,7 @@
 <h3>Associated Restaurants</h3>
 
 <ul>
-  <% @user.restaurants.each do |r| %>
+  <% @user.restaurants.uniq.each do |r| %>
     <li><%= r.name %><br></li>
     <ul>
       <li><%= r.cuisine %><br></li>
