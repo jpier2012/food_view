@@ -13,12 +13,16 @@
       <td><%= r.text_field :address %></td>
     </tr>
     <tr>
-      <td><%= r.label :cuisine %></td>
-      <td><%= r.text_field :cuisine %></td>
-    </tr>
-    <tr>
       <td><%= r.label :dress_code %></td>
       <td><%= r.text_field :dress_code %></td>
+    </tr>
+    <tr>
+      <td>
+        <div class="<%= ' field_with_errors' if @restaurant.errors[:cuisine].any? %>">
+          <%= r.label :cuisine, "Cuisine: "%>
+        </div>
+      </td>
+      <td><%= r.collection_select(:cuisine, Restaurant.cuisines, :to_s, :to_s, {prompt: "Choose"}) %></td>
     </tr>
   </table>
 <% end %>

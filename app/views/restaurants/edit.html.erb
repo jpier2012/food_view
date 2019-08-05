@@ -2,4 +2,4 @@
 
 <%= render "form" %>
 
-<%= link_to "Delete This Restaurant", restaurant_path(@restaurant), method: :delete %><br>
+<br><%= link_to "Delete This Restaurant", restaurant_path(@restaurant), html_options = { method: :delete, id: "button" } %><br>
