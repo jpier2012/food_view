@@ -167,3 +167,8 @@
     max-width: 75%;
     height: auto;
   }
+
+  #view_food {
+    font-size: 72px;
+    background-color: none;
+  }
