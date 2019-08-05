@@ -9,7 +9,7 @@
 user = User.create(email: "test@test.com", password: "password", password_confirmation: "password")
 user2 = User.create(email: "test2@test.com", password: "password", password_confirmation: "password")
 
-american = Restaurant.create(name: "Al's Beef", address: "Chicago, IL", cuisine: "American", outdoor_seating: true, child_friendly: true, created_by: user.id)
+american = Restaurant.create(name: "McDonald's", address: "Chicago, IL", cuisine: "American", outdoor_seating: true, child_friendly: true, created_by: user.id)
 chinese = Restaurant.create(name: "Yen Yen", address: "Buffalo Grove, IL", cuisine: "Chinese", open_bar: true, byob: true, child_friendly: true, created_by: user.id)
 thai = Restaurant.create(name: "Thai Frenzy", address: "All over the place", cuisine: "Thai", byob: true, outdoor_seating: true, created_by: user.id)
 mexican = Restaurant.create(name: "Martin's Tacos", address: "Hanover, IL", cuisine: "Mexican", outdoor_seating: true, child_friendly: true, created_by: user2.id)
