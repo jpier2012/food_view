@@ -11,7 +11,7 @@ This is my third project as a Flatiron school student.
 Clone the github repository by entering the following commands into your IDE terminal:
 ```git clone git@github.com:jpier2012/food_view.git```
 
-Change to the cloned Beautiful Billboard directory:
+Change to the cloned food_view directory:
 ```cd food_view```
 `
 Install all required gems:
