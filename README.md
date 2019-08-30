@@ -13,7 +13,7 @@ Clone the github repository by entering the following commands into your IDE ter
 
 Change to the cloned food_view directory:
 ```cd food_view```
-`
+
 Install all required gems:
 ```bundle```
 
